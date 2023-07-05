@@ -1,0 +1,73 @@
+﻿<Window x:Class="FinalTask_EF.FinalPayment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalTask_EF"
+        mc:Ignorable="d"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="FinalPayment" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Vertical" Margin="15" Background="Bisque">
+        <StackPanel Orientation="Horizontal">
+        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Margin="10,0,0,10" Grid.Row="0" Grid.Column="0" FontSize="18" >Reservation</TextBlock>
+            <TextBlock Margin="10,0,0,10" Grid.Row="0" Grid.Column="1" FontSize="18" >Price</TextBlock>
+
+            <TextBlock Margin="10,0,0,10" Grid.Row="1" Grid.Column="0" FontSize="18" >Current bill</TextBlock>
+            <TextBlock x:Name="CurrentBill" Margin="0,0,0,10" Grid.Row="1" Grid.Column="1" FontSize="18" >$ 0 USD</TextBlock>
+
+            <TextBlock Margin="10,0,0,10" Grid.Row="2" Grid.Column="0" FontSize="18" >Food bill</TextBlock>
+            <TextBlock x:Name="FoodBill" Margin="0,0,0,10" Grid.Row="2" Grid.Column="1" FontSize="18" >$ 0 USD</TextBlock>
+
+            <TextBlock Margin="10,0,0,10" Grid.Row="3" Grid.Column="0" FontSize="18" >Tax bill</TextBlock>
+            <TextBlock x:Name="TaxBill"  Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" FontSize="18" >$ 0 USD</TextBlock>
+
+            <TextBlock Margin="10,0,0,10" Grid.Row="4" Grid.Column="0" FontSize="18" >Total</TextBlock>
+            <TextBlock x:Name="Total"  Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" FontSize="18" >$ 0 USD</TextBlock>
+
+            <TextBlock Margin="10,0,0,10" Grid.Row="5" Grid.Column="0" FontSize="22" >Payment</TextBlock>
+
+
+            <ComboBox x:Name="Payment" mah:TextBoxHelper.Watermark="Payment Type" Margin="0,0,0,10" Grid.Row="6" Grid.Column="0" FontSize="18" >
+                
+            </ComboBox>
+            <TextBox x:Name="CardNum" mah:TextBoxHelper.Watermark="9999 - 9999 - 9999 - 9999"  Grid.Row="6" Grid.Column="1" Margin="0,0,0,10"></TextBox>
+
+            <StackPanel Grid.Row="7" Grid.Column="0" Height="30" Margin="0,10,0,10" Orientation="Horizontal">
+                <ComboBox x:Name="comboMonth" mah:TextBoxHelper.Watermark="MM" Height="30" Width="100" Margin="10,0,50,0" SelectionChanged="SelectedMonthChange"></ComboBox>
+                <ComboBox x:Name="comboYear" mah:TextBoxHelper.Watermark="YY" Height="30" Width="100" Margin="50,0,0,0"></ComboBox>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="7" Grid.Column="1" Height="35" Margin="0,0,0,0" Orientation="Horizontal">
+                <TextBox x:Name="txtCVC" mah:TextBoxHelper.Watermark="CVC" Width="70" Height="30" Margin="0,0,20,0"></TextBox>
+                <TextBlock  FontSize="16"  Margin="0,5,20,10">Card Type:</TextBlock>
+                <TextBlock x:Name="TxtCardType" Margin="0,5,0,10" FontSize="16" >UnKnown</TextBlock>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="8" Grid.Column="1" Height="70" >
+                <Button x:Name="Nextbtn" Height="30" Width="100" Margin="0,20,10,0" Background="Beige" BorderBrush="DarkRed" BorderThickness="2" HorizontalAlignment="Right" Click="payBtnNext" >Next</Button>
+            </StackPanel>
+
+        </Grid>
+
+    </StackPanel>
+</Window>
